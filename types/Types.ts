@@ -25,3 +25,18 @@ export interface TodoSearchProps {
     searchValue: string;
     setSearchValue: Dispatch<SetStateAction<string>>;
 }
+
+export interface TypeProps {
+    deleteTask: (text: string) => void
+    completeTask: (task: TodosType) => void
+    loading: boolean
+    searchTasks: TodosType[]
+    completed: number
+    leftListTasks: number
+    searchValue: string
+    setSearchValue: Dispatch<SetStateAction<string>>
+    showModal: boolean
+    setShowModal: Dispatch<SetStateAction<boolean>>
+    handleShowModal: () => void
+    addTodo: (task: string) => void
+}

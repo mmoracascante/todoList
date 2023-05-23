@@ -1,6 +1,7 @@
 import React, { useContext, FormEvent, useState, ChangeEvent } from 'react'
 import styled from 'styled-components'
 import { TodoContext } from '../../todo-context/TodoContext'
+import { TypeProps } from '../../../types/Types'
 
 const TodoForm = () => {
 
@@ -9,7 +10,7 @@ const TodoForm = () => {
 		showModal,
 		setShowModal,
 		handleShowModal
-	}: any = useContext(TodoContext)
+	} = useContext(TodoContext) as TypeProps
 
 	const [newTodoValue, setnewTodoValue] = useState('')
 

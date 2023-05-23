@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import { TodoContext } from '../../todo-context/TodoContext'
+import { TypeProps } from '../../../types/Types'
 import styled from 'styled-components'
 
 const CreateButton = () => {
 
-  const { handleShowModal }: any = useContext(TodoContext)
+  const { handleShowModal } = useContext(TodoContext) as TypeProps
 
   return (
     <>

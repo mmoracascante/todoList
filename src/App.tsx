@@ -8,7 +8,7 @@ import CreateButton from './components/create-button/CreateButton';
 import Loading from './components/loading/Loading';
 import TodoModal from './components/modal/TodoModal';
 import TodoForm from './components/todo-form/TodoForm';
-import { TodosType } from '../types/Types'
+import { TodosType, TypeProps } from '../types/Types'
 import { TodoContext } from './todo-context/TodoContext';
 
 
@@ -26,7 +26,7 @@ const App = () => {
     searchValue,
     setSearchValue,
     showModal,
-    setShowModal }: any = useContext(TodoContext)
+    setShowModal } = useContext(TodoContext) as TypeProps
 
   return (
     <>

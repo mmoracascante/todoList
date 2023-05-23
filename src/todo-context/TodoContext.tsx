@@ -1,14 +1,14 @@
-import { useContext, createContext, useEffect, useState, ReactNode } from 'react'
+import { useContext, createContext, useEffect, useState, ReactNode, Dispatch, SetStateAction } from 'react'
 
 import { todos } from '../DataMockup'
-import { TodosType } from '../../types/Types'
+import { TodosType, TypeProps } from '../../types/Types'
 
 interface Props {
     children: ReactNode;
 }
 
-// @ts-ignore
-const TodoContext = createContext()
+
+const TodoContext = createContext<TypeProps | null>(null)
 
 const TodoProvider = ({ children }: Props) => {
     const [loading, setLoading] = useState(false)

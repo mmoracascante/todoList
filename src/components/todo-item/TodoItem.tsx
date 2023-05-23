@@ -2,13 +2,8 @@ import React, { FC } from 'react'
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import styled, { css } from 'styled-components';
+import { TodoItemProps } from '../../../types/Types';
 
-interface TodoItemProps {
-  text: string;
-  completed: boolean;
-  completeTask: () => void;
-  deleteTask: () => void;
-}
 
 const TodoItem: FC<TodoItemProps> = ({ text, completed, completeTask, deleteTask }) => {
 

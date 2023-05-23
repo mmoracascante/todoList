@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../../todo-context/TodoContext'
 import styled from 'styled-components'
 
 const CreateButton = () => {
 
-  const handleClick = () => {
-    console.log('Abrir modal')
-  }
+  const { handleShowModal }: any = useContext(TodoContext)
 
   return (
     <>
       <ButtonStyled
-        onClick={handleClick}
+        onClick={() => handleShowModal()}
       >+</ButtonStyled>
     </>
   )
@@ -35,6 +34,7 @@ const ButtonStyled = styled.button`
   align-items: center;
   height: 64px;
   width: 64px;
+  z-index: 1;
 
   transform: rotate(0);
   transition: .3s ease;

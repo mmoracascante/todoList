@@ -1,16 +1,16 @@
-import React, {FC, ReactNode} from 'react'
+import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 
 interface Props {
-    children: ReactNode;
+  children: ReactNode;
 }
 
-const TodoList  = ({children}: Props) => {
+const TodoList = ({ children }: Props) => {
   return (
     <>
-        <UlStyled>
-            {children}
-        </UlStyled>
+      <UlStyled>
+        {children}
+      </UlStyled>
     </>
   )
 }

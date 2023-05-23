@@ -1,22 +1,22 @@
-import React from 'react'
+import { TodoCounterType } from '../../../types/Types'
 import styled from 'styled-components'
 
-interface TodoCounter {
-  completed: number;
-  leftListTasks: number;
-}
-
-const TodoCounter = ({ completed, leftListTasks }: TodoCounter) => {
+const TodoCounter = ({ completed, leftListTasks }: TodoCounterType) => {
   return (
     <>
-      {completed === leftListTasks ?
+      {leftListTasks === 0 ?
         <TitleCounter>
-          {`Has finalizado todas las tareas`}
+          {`Crea alguna tarea`}
         </TitleCounter>
-        :
-        <TitleCounter>
-          {`Has completado ${completed} de ${leftListTasks} tareas`}
-        </TitleCounter>
+        : completed < leftListTasks ?
+          <TitleCounter>
+            {`Has completado ${completed} de ${leftListTasks} tareas`}
+          </TitleCounter>
+          : leftListTasks === completed ?
+            <TitleCounter>
+              {`Has finalizado todas las tareas`}
+            </TitleCounter>
+            : null
 
       }
     </>

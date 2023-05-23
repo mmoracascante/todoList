@@ -1,10 +1,6 @@
 import React, { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 import styled from 'styled-components'
-
-interface TodoSearchProps {
-  searchValue: string;
-  setSearchValue: Dispatch<SetStateAction<string>>;
-}
+import { TodoSearchProps } from '../../../types/Types'
 
 const TodoSearch = ({ searchValue, setSearchValue }: TodoSearchProps) => {
 

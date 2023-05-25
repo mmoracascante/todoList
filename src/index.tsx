@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { TodoProvider } from './todo-context/TodoContext';
+import { TodoProvider } from './components/todo-list/todo-context/TodoContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

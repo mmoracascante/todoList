@@ -1,7 +1,8 @@
 import { useContext, createContext, useEffect, useState, ReactNode, Dispatch, SetStateAction } from 'react'
 
-import { todos } from '../DataMockup'
-import { TodosType, TypeProps } from '../../types/Types'
+import { todos } from '../../../DataMockup'
+import { TodosType, TypeProps } from '../../../../types/Types'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 
 interface Props {
     children: ReactNode;
@@ -14,7 +15,8 @@ const TodoProvider = ({ children }: Props) => {
     const [loading, setLoading] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [searchValue, setSearchValue] = useState('')
-    const [filteredData, setFilteredData] = useState<TodosType[]>([])
+    // const [filteredData, setFilteredData] = useState<TodosType[]>([])
+    const [filteredData, saveItem] = useLocalStorage('todos', [])
 
     useEffect(() => {
         setLoading(true)
@@ -37,13 +39,13 @@ const TodoProvider = ({ children }: Props) => {
 
         if (task.completed) {
             task.completed = false
-            setFilteredData([...filteredData])
+            saveItem([...filteredData])
         } else {
 
             const listIndex = filteredData.findIndex((item: TodosType) => item.text === task.text)
             const newList = [...filteredData]
             newList[listIndex].completed = true
-            setFilteredData(newList)
+            saveItem(newList)
         }
 
     }
@@ -51,7 +53,7 @@ const TodoProvider = ({ children }: Props) => {
     const deleteTask = (text: string) => {
 
         const newList = filteredData.filter((item: TodosType) => item.text !== text)
-        setFilteredData(newList)
+        saveItem(newList)
     }
 
     const handleShowModal = () => {
@@ -65,7 +67,7 @@ const TodoProvider = ({ children }: Props) => {
             completed: false
         }
 
-        setFilteredData([
+        saveItem([
             ...filteredData,
             newTodo
         ])

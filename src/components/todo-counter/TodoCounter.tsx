@@ -1,7 +1,10 @@
-import { TodoCounterType } from '../../../types/Types'
+import { useContext } from 'react'
+import { TodoCounterType, TypeProps } from '../../../types/Types'
+import { TodoContext } from '../todo-list/todo-context/TodoContext'
 import styled from 'styled-components'
 
-const TodoCounter = ({ completed, leftListTasks }: TodoCounterType) => {
+const TodoCounter = () => {
+  const { completed, leftListTasks } = useContext(TodoContext) as TypeProps
   return (
     <>
       {leftListTasks === 0 ?

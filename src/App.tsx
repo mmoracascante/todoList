@@ -9,7 +9,7 @@ import Loading from './components/loading/Loading';
 import TodoModal from './components/modal/TodoModal';
 import TodoForm from './components/todo-form/TodoForm';
 import { TodosType, TypeProps } from '../types/Types'
-import { TodoContext } from './todo-context/TodoContext';
+import { TodoContext } from './components/todo-list/todo-context/TodoContext';
 
 
 
@@ -21,8 +21,6 @@ const App = () => {
     completeTask,
     loading,
     searchTasks,
-    completed,
-    leftListTasks,
     searchValue,
     setSearchValue,
     showModal,
@@ -30,7 +28,7 @@ const App = () => {
 
   return (
     <>
-      <TodoCounter completed={completed} leftListTasks={leftListTasks} />
+      <TodoCounter />
       <TodoSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}

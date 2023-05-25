@@ -1,6 +1,6 @@
 import React, { useContext, FormEvent, useState, ChangeEvent } from 'react'
 import styled from 'styled-components'
-import { TodoContext } from '../../todo-context/TodoContext'
+import { TodoContext } from '../todo-list/todo-context/TodoContext'
 import { TypeProps } from '../../../types/Types'
 
 const TodoForm = () => {
